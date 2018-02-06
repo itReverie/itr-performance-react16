@@ -7,12 +7,11 @@ import PropTypes from 'prop-types';
 
 export default class Coin extends Component{
 
-static propTypes={
+  static propTypes={
   coin: PropTypes.object.isRequired,
   delete: PropTypes.func.isRequired,
   color: PropTypes.string
-}
-
+  }
 
   componentWillMount() {
     this.handleDeleteClick = this.props.delete.bind(this,this.props.coin.id)
@@ -28,10 +27,9 @@ static propTypes={
   //      return shallowCompare(this, nextProps, nextState);
   //}
 
-  //this.handleDeleteClick
-//onClick={this.props.delete.bind(this,this.props.id)}
-    render(){
-              let buttonCoin = color => ({ backgroundColor: color, margin: "20px", width: "100px", height: "50px" });
+  render(){
+            let buttonCoin = color => ({ backgroundColor: color, margin: "20px", width: "100px", height: "50px" });
+              //style={buttonCoin(this.props.color)}
 
               // const CoinBox = styled.button.attrs({
               //   background: props => props.color || "#aaaaaa"
@@ -39,15 +37,14 @@ static propTypes={
               //   width: 100px;
               //   margin: 20px;
               //   background: ${props => props.background};`;
+              //color={this.props.color} <CoinBox
 
               //className="button-coin"
-              //style={buttonCoin(this.props.color)}
+
               //style={{backgroundColor:'#aaaaaa', margin:'20px', width:'100px', height:'50px'}}
-              //color={this.props.color} <CoinBox
+
               return <button onClick={this.handleDeleteClick} style={buttonCoin(this.props.color)}>
                   {this.props.coin.name}
                 </button>;
             }
 }
-
-

@@ -27,7 +27,7 @@ class ListCoins extends Component{
  render(){
     return (<div>{this.state.coins.map((coin, index) => {
       return <Coin
-      key = {coin.id}
+      key = {index}
       coin = {coin}
       color = {this.props.color}
       delete={this.delete}
