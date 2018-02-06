@@ -7,12 +7,14 @@ class ListCoins extends Component{
   constructor(props){
         super(props);
         this.state = {
-          coins: this.props.coins
+          coins: this.props.coins,
+          color: this.props.color
         }
 
      }
 
      delete(id){
+          // filter() method creates a new array with all elements that pass the test
            this.setState(prevState => ({
                coins: prevState.coins.filter(coin => coin.id !== id )
            }));
@@ -23,17 +25,20 @@ class ListCoins extends Component{
   }
 
  render(){
-    return (<div>{this.state.coins.map(coin => <Coin
-      key={coin.id}
+    return (<div>{this.state.coins.map((coin, index) => {
+      return <Coin
+      key = {coin.id}
       coin = {coin}
+      color = {this.props.color}
       delete={this.delete}
-      />)}</div>);
+      />}
+    )}</div>);
  }
 }
 
 ListCoins.propTypes = {
-  coins: PropTypes.array.isRequired
-
+  coins: PropTypes.array.isRequired,
+  color: PropTypes.string,
 };
 
-  export default ListCoins;
+export default ListCoins;
