@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 //import './Coin.css';
 //import shallowCompare from 'react-addons-shallow-compare';
 //import styled from 'styled-components';
 
 
-export default class Coin extends Component{
+export default class Coin extends PureComponent{
 
   static propTypes={
   coin: PropTypes.object.isRequired,

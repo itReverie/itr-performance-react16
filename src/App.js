@@ -8,8 +8,8 @@ import registerObserver from "react-perf-devtool";
 
 const options = {
   shouldLog: true,
-  port: 3000, // Port to which measures are to be logged
-  components:['App']
+  port: 8080, // Port to which measures are to be logged
+  //components:['App']
 };
 function callback(measures) {
   // do something with these measures. Send to Googel Analytics Dashboard for further analysis ??
@@ -20,7 +20,7 @@ function callback(measures) {
 registerObserver(options, callback);
 
 class App extends Component {
-  
+
   render() {
     return <div>
          <h1 className="App-title">
